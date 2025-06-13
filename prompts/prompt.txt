@@ -1,0 +1,82 @@
+### 🧠 **Project Context & Objective**
+
+I’m working in a **Java 8 legacy environment** (JDK 1.8) using **JSP** and **Servlets**. In this web application, I often need to generate **PDF documents** such as **payslips** and **invoices (factures)**.
+
+Currently, I rely on **JasperReports** with **iReport Designer 5.6.0** (the last version compatible with Java 8) to manually design and produce `.jrxml` templates. These templates are later compiled and used to generate PDF reports.
+
+---
+
+### ⚙️ **Current Workflow**
+
+1. Receive a **sample document** (e.g., image or scanned version of a payslip/invoice) from the client.
+2. Open **iReport Designer 5.6.0** to **manually recreate the layout** as a `.jrxml` file.
+3. Compile the `.jrxml` to a `.jasper` file.
+4. Use this compiled report in the Java backend to export the final **PDF**.
+
+---
+
+### ❌ **Pain Points**
+
+* Manual `.jrxml` design is **time-consuming, repetitive, and error-prone**.
+* The visual layout must be recreated by hand, which slows down development and maintenance.
+* iReport is no longer actively supported and offers no modern UX or automation features.
+
+---
+
+### 🎯 **Goal**
+
+I want to develop a **semi-automated or fully automated solution** to streamline the `.jrxml` creation process by:
+
+* Taking a **visual design reference** (such as an image or HTML/CSS mockup),
+* And automatically generating a `.jrxml` file from it.
+
+This `.jrxml` can then be compiled and used in the existing Java 8 backend to produce the required PDF outputs.
+
+---
+
+### 🤖 **What I Need Help With**
+
+I’m seeking guidance on how to **design and implement** this automated `.jrxml` generation program.
+
+#### 🔍 Key Questions:
+
+1. **What are the technical requirements and libraries/tools needed for this solution?**
+2. **What would be the best workflow or architecture for this automation?**
+
+#### 💡 **My Initial Idea (Open to Suggestions):**
+
+* Start with a **visual representation** of the document (image or mockup).
+* Recreate the layout in **HTML/CSS**.
+* Write **Java methods** to convert HTML/CSS segments into corresponding `.jrxml` elements, for example:
+
+  ```java
+  public String createJrxmlHeader(String htmlHeader)
+  public String createJrxmlRow(String htmlRow)
+  ```
+* Assemble the output `.jrxml` file programmatically.
+
+#### 🧩 Alternative Approaches?
+
+* Should we use an **HTML-to-Jasper** converter?
+* Can we leverage any **existing libraries or XML templating tools**?
+* Should we use an **intermediate format** (like HTML-to-PDF then reverse-analyze for `.jrxml`)?
+* Can AI (e.g., OCR or layout analysis) help map the layout automatically from an image?
+
+---
+
+### 📌 **Deliverable I’m Looking For**
+
+A **detailed, step-by-step roadmap or architecture plan** that:
+
+* Fits within a Java 8 / JSP / Servlet / iReport-compatible environment.
+* Explains the best approach(es) to implement the automated `.jrxml` generation process.
+* Includes tool suggestions, reusable method ideas, and potential challenges or limitations.
+
+---
+
+✅ *You’re welcome to revise or challenge my initial ideas. The goal is to find the most robust and efficient approach possible given the constraints.*
+
+
+/*--------------------------------------------------------------------------------------------- */
+
+
